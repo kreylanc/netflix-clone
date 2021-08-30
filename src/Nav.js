@@ -12,7 +12,7 @@ function Nav() {
    */
   const transitionNavBar = () => {
     // if scrollY (vertically) is more than 100 setnavbar to true
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY >= 100) {
       setNavBar(true);
     } else {
@@ -22,6 +22,11 @@ function Nav() {
   };
 
   // * a scroll event listener to call the function #transitionNavBar()
+
+  /**
+   * removeEventListener used for deleting the event listener after its called to keep the memory clean or something
+   * ? Or maybe something else, dont really understand currently
+   */
   useEffect(() => {
     window.addEventListener("scroll", transitionNavBar);
     return () => window.removeEventListener("scroll", transitionNavBar);
@@ -45,6 +50,11 @@ function Nav() {
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt=""
         />
+        <div className="nav__options">
+          <h3>Home</h3>
+          <h3>Movies</h3>
+          <h3>TV</h3>
+        </div>
       </div>
     </div>
   );

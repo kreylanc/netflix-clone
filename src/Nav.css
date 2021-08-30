@@ -1,9 +1,10 @@
 .nav {
   position: fixed;
   top: 0;
+  /* background-color: cadetblue; */
   padding: 20px;
   width: 100%;
-  height: 30px;
+  height: 65px;
   /* z-index determines the order of the element 
     * * Only works with position element
   */
@@ -15,6 +16,7 @@
 }
 
 .nav__contents {
+  color: whitesmoke;
   display: flex;
   justify-content: space-between;
 }
@@ -26,7 +28,7 @@
 .nav__logo {
   position: fixed;
   /* place the element in the left side with no space to its left */
-  top: 25px;
+  top: 30px;
   left: 0;
   width: 80px;
   object-fit: contain;
@@ -40,4 +42,17 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.nav__options {
+  display: flex;
+  margin-left: 15vh;
+  margin-top: 3px;
+}
+
+.nav__options h3 {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-right: 15px;
 }
