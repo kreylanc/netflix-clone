@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css"; // ### import the css file for the navbar
+import { useHistory } from "react-router-dom";
 
 function Nav() {
   /** useState to change the navbar background
@@ -21,16 +22,17 @@ function Nav() {
     }
   };
 
-  // * a scroll event listener to call the function #transitionNavBar()
-
-  /**
-   * removeEventListener used for deleting the event listener after its called to keep the memory clean or something
+  /** a scroll event listener to call the function #transitionNavBar()
+   * removeEventListener used for clearing the event listener after its called to keep the memory clean or something
    * ? Or maybe something else, dont really understand currently
    */
   useEffect(() => {
     window.addEventListener("scroll", transitionNavBar);
     return () => window.removeEventListener("scroll", transitionNavBar);
-  }, [navbar]);
+  }, []);
+
+  //From React router to keep track of page history to go back and forth
+  const history = useHistory();
 
   return (
     <div className={navbar ? "nav nav__black" : "nav"}>
@@ -40,12 +42,16 @@ function Nav() {
       */}
       <div className="nav__contents">
         <img
+          onClick={() => {
+            history.push("./");
+          }}
           className="nav__logo"
           src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
           alt=""
         />
 
         <img
+          onClick={() => history.push("./Profile")}
           className="nav__avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt=""

@@ -1,0 +1,113 @@
+.profileScreen {
+  height: 100vh;
+  color: white;
+}
+
+.profileScreen__body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 6%;
+}
+
+.profileScreen__body h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.profileScreen__info {
+  display: flex;
+}
+
+.profileScreen__info img {
+  height: 100px;
+}
+
+.profileScreen__details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.profileScreen__details h2 {
+  background-color: gray;
+  padding: 15px;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.profileScreen__plans {
+  margin-top: 20px;
+}
+
+.profileScreen__plans h3 {
+  border-bottom: 1px solid #282c2d;
+  padding-bottom: 10px;
+}
+
+.profileScreen__signOut {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 3px;
+}
+
+.profileScreen__signOut:hover {
+  background-color: #f11823;
+}
+
+.profileScreen__plans p {
+  margin-top: 10px;
+}
+
+.subscribe__plans {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  color: #cac9c9;
+}
+
+.standard,
+.basic,
+.premium {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+  font-size: 0.8rem;
+}
+
+.standard:hover,
+.basic:hover,
+.premium:hover {
+  color: white;
+}
+
+.quality__text span {
+  font-size: 12px;
+}
+
+.subscribe__button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #bb0811;
+  color: rgb(230, 230, 230);
+  padding: 10px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+
+.subscribe__button:hover {
+  color: white;
+  background-color: #e50914;
+}

@@ -1,0 +1,110 @@
+.loginScreen {
+  position: relative;
+  height: 100%;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/5a27cb25-33a9-4bcc-b441-95fefabcbd37/05f7f3d2-dc99-45e5-a338-7a450079a1ca/NP-en-20210823-popsignuptwoweeks-perspective_alpha_website_small.jpg")
+    center no-repeat;
+  background-size: cover;
+}
+
+.loginScreen__button {
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border-radius: 5px;
+}
+.loginScreen__logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
+}
+
+.loginScreen__gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.loginScreen__body {
+  top: 30%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  text-align: center;
+}
+
+.loginScreen__body h1,
+.loginScreen__body h2 {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: 3.125rem;
+}
+.hero__subtitle {
+  font-size: 1.625rem;
+  font-weight: normal;
+  /* margin-bottom: 30px; */
+  margin: 1rem auto;
+}
+
+.hero__paragraph {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.loginScreen__input {
+  margin: 10px;
+}
+
+.loginScreen__input form input {
+  padding: 10px;
+
+  border-radius: 2px;
+  min-height: 60px;
+  width: 30%;
+  max-width: 600px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  outline: none;
+  border: none;
+}
+
+.email__button {
+  width: 15%;
+  cursor: pointer;
+  /* padding: 16px 20px; */
+
+  height: 60px;
+  /* font-size: 1.2rem; */
+  border: none;
+  color: white;
+  background-color: #e50914;
+}
+
+.email__button:hover {
+  background-color: #f11823;
+}

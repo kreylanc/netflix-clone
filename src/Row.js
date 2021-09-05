@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "./axios";
 import "./Row.css";
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 
 function Row({ title, fetchURL, isLargeRow = false }) {
   const [movies, setMovie] = useState([]);

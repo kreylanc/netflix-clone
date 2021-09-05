@@ -21,7 +21,7 @@ function HomeScreen() {
         isLargeRow
       />
 
-      {/* <Row title="LATEST" fetchURL={requests.fetchLatest} /> */}
+      {/* <Row title="LATEST" fetchURL={requests.fetchLatest} isLargeRow /> */}
 
       <Row title="TRENDING" fetchURL={requests.fetchTrending} isLargeRow />
       <Row title="TOP RATED" fetchURL={requests.fetchTopRated} />
