@@ -6,7 +6,7 @@
   background-size: cover;
 }
 
-.loginScreen__button {
+/* .loginScreen__button {
   cursor: pointer;
   position: fixed;
   right: 20px;
@@ -25,7 +25,7 @@
   width: 150px;
   object-fit: contain;
   padding-left: 20px;
-}
+} */
 
 .loginScreen__gradient {
   width: 100%;

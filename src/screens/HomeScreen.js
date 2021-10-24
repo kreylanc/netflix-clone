@@ -7,7 +7,7 @@ import requests from "../Requests";
 
 function HomeScreen() {
   return (
-    <div className="homeScreen">
+    <div className="bg-black">
       {/* Call the Navbar component */}
       <Nav />
 

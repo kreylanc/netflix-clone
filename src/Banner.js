@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import requests from "./Requests";
 import axios from "./axios";
+import { faPlay, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Banner() {
   /**
@@ -39,28 +41,32 @@ function Banner() {
      * TODO: Fetch data from API and use those values for image and titles
      */
     <header
-      className="banner"
+      className=" shadow bg-center md:bg-left-top bg-cover object-fill text-white"
       style={{
-        backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-        backgroundPosition: "center",
       }}
     >
-      <div className="banner__contents">
-        <h1 className="banner__title">
+      <div className=" pt-44 h-48 px-6">
+        <h1 className="text-3xl font-extrabold pb-3 md:text-5xl transition-all duration-300 ease-in">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <div className="banner__buttons">
-          <button className="banner__button watch">WATCH</button>
-          <button className="banner__button">ADD TO LIST</button>
+        <div className="md:mt-2">
+          <button className="banner__buttons bg-main mr-4  hover:bg-gray-200 hover:text-main">
+            <FontAwesomeIcon icon={faPlay} className="mr-2" />
+            WATCH
+          </button>
+          <button className="banner__buttons bg-gray450 hover:bg-gray-200 hover:text-gray-900 ">
+            <FontAwesomeIcon icon={faPlus} className="mr-2" />
+            ADD TO LIST
+          </button>
         </div>
 
-        <div className="banner__description">
+        <div className=" h-20 max-w-prose pt-4 text-sm xl:text-xl">
           {truncate(movie?.overview, 150)}
         </div>
       </div>
 
-      <div className="banner--fadeBottom" />
+      <div className=" h-64 bg-gradient-to-b from-transparent via-gray450 to-black" />
     </header>
   );
 }

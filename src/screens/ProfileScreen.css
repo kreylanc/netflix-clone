@@ -34,7 +34,7 @@
 }
 
 .profileScreen__details h2 {
-  background-color: gray;
+  background-color: #808080;
   padding: 15px;
   padding-left: 20px;
   font-size: 15px;
@@ -74,7 +74,6 @@
   display: flex;
   flex-direction: column;
   padding: 10px 5px;
-  color: #cac9c9;
 }
 
 .standard,
@@ -84,12 +83,13 @@
   justify-content: space-between;
   margin: 10px 0px;
   font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .standard:hover,
 .basic:hover,
 .premium:hover {
-  color: white;
+  opacity: 1;
 }
 
 .quality__text span {

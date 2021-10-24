@@ -1,23 +1,24 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import "./App.css";
-import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { login, logout, selectUser } from "./features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-import ProfileScreen from "./screens/ProfileScreen";
+import SigninScreen from "./screens/SigninScreen";
+
+//lazy method used for loading the component only when needed
+//makes it so not all component are loaded at the same time to save bandwidth and speed
+const LazyHome = React.lazy(() => import("./screens/HomeScreen"));
+const LazyMovie = React.lazy(() => import("./screens/MovieScreen"));
+const LazyTv = React.lazy(() => import("./screens/TvScreen"));
+const LazyProfile = React.lazy(() => import("./screens/ProfileScreen"));
+const LazySignin = React.lazy(() => import("./screens/SigninScreen"));
 
 function App() {
   const dispatch = useDispatch();
-
-  const history = useHistory();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -41,21 +42,37 @@ function App() {
 
   const user = useSelector(selectUser);
   return (
-    <div className="app">
+    <div className="">
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
 
       <Router>
         {!user ? (
-          <LoginScreen />
-        ) : (
           <Switch>
             <Route exact path="/">
-              <HomeScreen />
+              <LoginScreen />
             </Route>
-            <Route exact path="/Profile">
-              <ProfileScreen />
+            <Route exact path="/signin">
+              <SigninScreen />
             </Route>
+          </Switch>
+        ) : (
+          <Switch>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Route exact path="/">
+                <LazyHome />
+              </Route>
+
+              <Route exact path="/profile">
+                <LazyProfile />
+              </Route>
+              <Route exact path="/movies">
+                <LazyMovie />
+              </Route>
+              <Route exact path="/tvseries">
+                <LazyTv />
+              </Route>
+            </Suspense>
           </Switch>
         )}
       </Router>
